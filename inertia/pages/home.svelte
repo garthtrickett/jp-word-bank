@@ -1,5 +1,10 @@
 <script lang="ts">
-export let name: string 
+  import type { InferPageProps } from '@adonisjs/inertia/types';
+  import HomeController  from '#controllers/home_controller'
+
+  type Name = InferPageProps<HomeController, 'index'>
+  let { name }: Name = $props();
+
 </script>
 
 
